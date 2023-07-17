@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 import { allPosts } from 'contentlayer/generated'
+
 import { Mdx } from '@/components/Mdx'
 
 export default function Home() {

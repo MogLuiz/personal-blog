@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 
 import { headerConfig } from '@/config'
 
+import { Layout } from '@/components/atoms/Layout'
 import { Header } from '@/components/molecules/Header'
 
 import '@/styles/globals.css'
@@ -20,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-primary text-gray-100">
         <Header items={headerConfig.mainNav} />
-        {children}
+        <Layout>{children}</Layout>
       </body>
     </html>
   )

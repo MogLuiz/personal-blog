@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import { NavItem } from '@/types'
 
-import { Logo } from '@/components/Logo'
+import { Logo } from '@/components/atoms/Logo'
 
 import * as S from './styles'
 

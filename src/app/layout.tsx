@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 import { headerConfig } from '@/config'
 
-import { Header } from '@/components/Header'
+import { Header } from '@/components/molecules/Header'
 
 import '@/styles/globals.css'
 

@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 
 import { Logo } from '.'
 
-describe('Component - Logo', () => {
+describe('Components > Atoms - Logo', () => {
   it('should be able to render the logo', () => {
     render(<Logo />)
 

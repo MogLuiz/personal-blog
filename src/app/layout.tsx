@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 
+import { headerConfig } from '@/config'
+
 import { Header } from '@/components/Header'
 
 import '@/styles/globals.css'
@@ -17,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-primary text-gray-100">
-        <Header />
+        <Header items={headerConfig.mainNav} />
         {children}
       </body>
     </html>

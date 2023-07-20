@@ -1,53 +1,56 @@
 import { render, screen } from '@testing-library/react'
 
-import { Grid } from '.'
+import { Grid, GridProps } from './Grid'
+
+type ExcludeProperty<T, K extends keyof T> = Omit<T, K>
+
+const factorySetupTest = (props?: ExcludeProperty<GridProps, 'children'>) => {
+  render(<Grid {...props}>Grid</Grid>)
+  const gridChildren = screen.getByText(/grid/i)
+
+  return {
+    gridChildren
+  }
+}
 
 describe('Components > Atoms - Grid', () => {
   it('should be able to render the grid correctly', () => {
-    render(<Grid>Grid</Grid>)
-
-    expect(screen.getByText(/grid/i)).toBeVisible()
+    const { gridChildren } = factorySetupTest()
+    expect(gridChildren).toBeVisible()
   })
 
   it('should be able to render the grid with the correct number of columns', () => {
-    render(<Grid cols={3}>Grid</Grid>)
-
-    expect(screen.getByText(/grid/i)).toHaveClass('grid-cols-3')
+    const { gridChildren } = factorySetupTest({ cols: 3 })
+    expect(gridChildren).toHaveClass('grid-cols-3')
   })
 
   it('should be able to render the grid with the correct number of columns on small screens', () => {
-    render(<Grid sm={3}>Grid</Grid>)
-
-    expect(screen.getByText(/grid/i)).toHaveClass('sm:grid-cols-3')
+    const { gridChildren } = factorySetupTest({ sm: 3 })
+    expect(gridChildren).toHaveClass('sm:grid-cols-3')
   })
 
   it('should be able to render the grid with the correct number of columns on medium screens', () => {
-    render(<Grid md={3}>Grid</Grid>)
-
-    expect(screen.getByText(/grid/i)).toHaveClass('md:grid-cols-3')
+    const { gridChildren } = factorySetupTest({ md: 3 })
+    expect(gridChildren).toHaveClass('md:grid-cols-3')
   })
 
   it('should be able to render the grid with the correct number of columns on large screens', () => {
-    render(<Grid lg={3}>Grid</Grid>)
-
-    expect(screen.getByText(/grid/i)).toHaveClass('lg:grid-cols-3')
+    const { gridChildren } = factorySetupTest({ lg: 3 })
+    expect(gridChildren).toHaveClass('lg:grid-cols-3')
   })
 
   it('should be able to render the grid with the correct number of columns on extra large screens', () => {
-    render(<Grid xl={3}>Grid</Grid>)
-
-    expect(screen.getByText(/grid/i)).toHaveClass('xl:grid-cols-3')
+    const { gridChildren } = factorySetupTest({ xl: 3 })
+    expect(gridChildren).toHaveClass('xl:grid-cols-3')
   })
 
   it('should be able to render the grid with the correct number of columns on extra extra large screens', () => {
-    render(<Grid xxl={3}>Grid</Grid>)
-
-    expect(screen.getByText(/grid/i)).toHaveClass('2xl:grid-cols-3')
+    const { gridChildren } = factorySetupTest({ xxl: 3 })
+    expect(gridChildren).toHaveClass('2xl:grid-cols-3')
   })
 
   it('should be able to render the grid with the correct gap', () => {
-    render(<Grid gap={3}>Grid</Grid>)
-
-    expect(screen.getByText(/grid/i)).toHaveClass('gap-3')
+    const { gridChildren } = factorySetupTest({ gap: 3 })
+    expect(gridChildren).toHaveClass('gap-3')
   })
 })

@@ -13,7 +13,7 @@ type HomeProps = {
 export const Home = ({ allPosts }: HomeProps) => (
   <main>
     <div className="my-10">
-      <Profile {...siteConfig} />
+      <Profile title={siteConfig.title} subtitle={siteConfig.subtitle} />
     </div>
 
     <div>

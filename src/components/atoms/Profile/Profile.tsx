@@ -1,5 +1,7 @@
 import Image from 'next/image'
 
+import * as S from './styles'
+
 type ProfileProps = {
   title: string
   subtitle: string
@@ -17,7 +19,7 @@ export const Profile = ({ title, subtitle }: ProfileProps) => (
       priority
     />
 
-    <h1 className="my-3 text-4xl font-bold">{title}</h1>
-    <h4 className="text-md">{subtitle}</h4>
+    <S.Title>{title}</S.Title>
+    <S.Subtitle>{subtitle}</S.Subtitle>
   </div>
 )

@@ -14,4 +14,10 @@ describe('Components > Atoms - Grid', () => {
 
     expect(screen.getByText(/grid/i)).toHaveClass('grid-cols-3')
   })
+
+  it('should be able to render the grid with the correct number of columns on small screens', () => {
+    render(<Grid sm={3}>Grid</Grid>)
+
+    expect(screen.getByText(/grid/i)).toHaveClass('sm:grid-cols-3')
+  })
 })

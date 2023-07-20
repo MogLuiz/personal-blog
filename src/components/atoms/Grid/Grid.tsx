@@ -1,4 +1,6 @@
-type GridProps = {
+import * as S from './styles'
+
+export type GridProps = {
   children: React.ReactNode
   cols?: number
   sm?: number
@@ -19,19 +21,17 @@ export const Grid = ({
   cols = 1,
   gap = 8
 }: GridProps) => {
-  const small = sm ? `sm:grid-cols-${sm}` : ''
-  const medium = md ? `md:grid-cols-${md}` : ''
-  const large = lg ? `lg:grid-cols-${lg}` : ''
-  const extraLarge = xl ? `xl:grid-cols-${xl}` : ''
-  const extraExtraLarge = xxl ? `2xl:grid-cols-${xxl}` : ''
-
-  const responsive = `${small} ${medium} ${large} ${extraLarge} ${extraExtraLarge} `
-
   return (
-    <>
-      <div className={`grid grid-cols-${cols} gap-${gap} ${responsive} w-full`}>
-        {children}
-      </div>
-    </>
+    <S.Container
+      cols={cols}
+      gap={gap}
+      sm={sm}
+      md={md}
+      lg={lg}
+      xl={xl}
+      xxl={xxl}
+    >
+      {children}
+    </S.Container>
   )
 }

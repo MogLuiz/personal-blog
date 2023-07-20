@@ -32,4 +32,22 @@ describe('Components > Atoms - Grid', () => {
 
     expect(screen.getByText(/grid/i)).toHaveClass('lg:grid-cols-3')
   })
+
+  it('should be able to render the grid with the correct number of columns on extra large screens', () => {
+    render(<Grid xl={3}>Grid</Grid>)
+
+    expect(screen.getByText(/grid/i)).toHaveClass('xl:grid-cols-3')
+  })
+
+  it('should be able to render the grid with the correct number of columns on extra extra large screens', () => {
+    render(<Grid xxl={3}>Grid</Grid>)
+
+    expect(screen.getByText(/grid/i)).toHaveClass('2xl:grid-cols-3')
+  })
+
+  it('should be able to render the grid with the correct gap', () => {
+    render(<Grid gap={3}>Grid</Grid>)
+
+    expect(screen.getByText(/grid/i)).toHaveClass('gap-3')
+  })
 })

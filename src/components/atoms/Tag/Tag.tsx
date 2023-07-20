@@ -6,9 +6,7 @@ export type TagProps = {
 }
 
 export const Tag = ({ children, size = 'sm' }: TagProps) => (
-  <div>
-    <S.Tag size={size} className="">
-      {children}
-    </S.Tag>
-  </div>
+  <S.Tag size={size} className="">
+    {children}
+  </S.Tag>
 )

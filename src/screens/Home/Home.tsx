@@ -1,6 +1,9 @@
 import { Post } from 'contentlayer/generated'
 
+import { siteConfig } from '@/config'
+
 import { Grid } from '@/components/atoms/Grid'
+import { Profile } from '@/components/atoms/Profile'
 import { PostCard } from '@/components/molecules/PostCard'
 
 type HomeProps = {
@@ -9,6 +12,10 @@ type HomeProps = {
 
 export const Home = ({ allPosts }: HomeProps) => (
   <main>
+    <div className="my-10">
+      <Profile {...siteConfig} />
+    </div>
+
     <div>
       <Grid gap={10} sm={1} md={2} lg={3}>
         {allPosts.map((post) => (

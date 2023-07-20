@@ -1,5 +1,6 @@
 import { Post } from 'contentlayer/generated'
 
+import { Grid } from '@/components/atoms/Grid'
 import { PostCard } from '@/components/molecules/PostCard'
 
 type HomeProps = {
@@ -9,16 +10,11 @@ type HomeProps = {
 export const Home = ({ allPosts }: HomeProps) => (
   <main>
     <div>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat ullam
-      aliquam commodi perferendis vero? Ex eveniet expedita suscipit asperiores
-      ullam! Tempora natus, quam aspernatur laudantium dicta iste ab deserunt
-      accusantium.
-    </div>
-
-    <div>
-      {allPosts.map((post) => (
-        <PostCard key={post._id} />
-      ))}
+      <Grid gap={10} sm={1} md={2} lg={3}>
+        {allPosts.map((post) => (
+          <PostCard key={post._id} />
+        ))}
+      </Grid>
     </div>
   </main>
 )

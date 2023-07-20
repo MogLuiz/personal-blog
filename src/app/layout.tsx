@@ -21,7 +21,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-primary text-gray-100">
         <Header items={headerConfig.mainNav} />
-        <Layout>{children}</Layout>
+        <Layout>
+          <div className="pt-20">{children}</div>
+        </Layout>
       </body>
     </html>
   )

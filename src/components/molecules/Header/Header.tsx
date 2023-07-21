@@ -1,4 +1,4 @@
-import { headerConfig } from '@/config'
+import { mainNavConfig } from '@/config'
 
 import { Logo } from '@/components/atoms/Logo'
 import { MainNav } from '@/components/atoms/MainNav'
@@ -11,7 +11,7 @@ export const Header = () => {
       <S.Content>
         <Logo />
 
-        <MainNav items={headerConfig.mainNav} />
+        <MainNav items={mainNavConfig.mainNav} />
       </S.Content>
     </S.Container>
   )

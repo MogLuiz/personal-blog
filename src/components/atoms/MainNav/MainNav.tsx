@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { NavItem } from '@/types'
+import { NavItem } from '@/models'
 
 import * as S from './styles'
 

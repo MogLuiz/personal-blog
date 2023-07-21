@@ -1,4 +1,4 @@
-import { Site } from '@/types'
+import { Site } from '@/models'
 
 export const siteConfig: Site = {
   name: 'Luiz Ramos',

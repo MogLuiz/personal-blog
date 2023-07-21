@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
 
-import { headerConfig } from '@/config'
-
 import { Layout } from '@/components/atoms/Layout'
 import { Header } from '@/components/molecules/Header'
 
@@ -20,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-primary text-gray-100">
-        <Header items={headerConfig.mainNav} />
+        <Header />
         <Layout>
           <div className="pt-20">{children}</div>
         </Layout>

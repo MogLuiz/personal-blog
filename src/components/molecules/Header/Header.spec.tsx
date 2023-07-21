@@ -4,7 +4,7 @@ import { Header } from '.'
 import { headerItemsMock } from './mock'
 
 const factorySetupTest = () => {
-  render(<Header items={headerItemsMock} />)
+  render(<Header />)
 
   const navigationItem1 = screen.getByText(RegExp(headerItemsMock[0].title))
   const navigationItem2 = screen.getByText(RegExp(headerItemsMock[1].title))

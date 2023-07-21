@@ -1,14 +1,15 @@
 import { render, screen } from '@testing-library/react'
 
+import { mainNavItemsMock } from '@/models/@mocks/mainNav'
+
 import { Header } from '.'
-import { headerItemsMock } from './mock'
 
 const factorySetupTest = () => {
   render(<Header />)
 
-  const navigationItem1 = screen.getByText(RegExp(headerItemsMock[0].title))
-  const navigationItem2 = screen.getByText(RegExp(headerItemsMock[1].title))
-  const navigationItem3 = screen.getByText(RegExp(headerItemsMock[2].title))
+  const navigationItem1 = screen.getByText(RegExp(mainNavItemsMock[0].title))
+  const navigationItem2 = screen.getByText(RegExp(mainNavItemsMock[1].title))
+  const navigationItem3 = screen.getByText(RegExp(mainNavItemsMock[2].title))
 
   return {
     navigationItem1,
@@ -32,8 +33,8 @@ describe('Components > Molecules - Header', () => {
     const { navigationItem1, navigationItem2, navigationItem3 } =
       factorySetupTest()
 
-    expect(navigationItem1).toHaveAttribute('href', headerItemsMock[0].href)
-    expect(navigationItem2).toHaveAttribute('href', headerItemsMock[1].href)
-    expect(navigationItem3).toHaveAttribute('href', headerItemsMock[2].href)
+    expect(navigationItem1).toHaveAttribute('href', mainNavItemsMock[0].href)
+    expect(navigationItem2).toHaveAttribute('href', mainNavItemsMock[1].href)
+    expect(navigationItem3).toHaveAttribute('href', mainNavItemsMock[2].href)
   })
 })

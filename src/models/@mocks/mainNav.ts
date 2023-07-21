@@ -1,4 +1,4 @@
-export const headerItemsMock = [
+export const mainNavItemsMock = [
   {
     title: 'Home',
     href: '/'

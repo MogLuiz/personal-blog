@@ -11,8 +11,8 @@ type HomeProps = {
 }
 
 export const Home = ({ allPosts }: HomeProps) => (
-  <main>
-    <div className="my-10">
+  <main className="flex flex-col gap-6">
+    <div>
       <Profile title={siteConfig.title} subtitle={siteConfig.subtitle} />
     </div>
 

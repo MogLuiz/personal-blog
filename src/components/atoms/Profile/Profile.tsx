@@ -8,7 +8,7 @@ type ProfileProps = {
 }
 
 export const Profile = ({ title, subtitle }: ProfileProps) => (
-  <div>
+  <>
     <Image
       src="/assets/images/profile.jpg"
       alt="Profile image"
@@ -21,5 +21,5 @@ export const Profile = ({ title, subtitle }: ProfileProps) => (
 
     <S.Title>{title}</S.Title>
     <S.Subtitle>{subtitle}</S.Subtitle>
-  </div>
+  </>
 )

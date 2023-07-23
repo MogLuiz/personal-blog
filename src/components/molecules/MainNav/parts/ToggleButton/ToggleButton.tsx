@@ -8,10 +8,16 @@ type ToggleButtonProps = {
 export const ToggleButton = ({
   isOpenMenu,
   handleToggleMenu
-}: ToggleButtonProps) => (
-  <>
-    <button>
-      <CloseIcon size={32} data-testid="close-icon" />
+}: ToggleButtonProps) => {
+  const accessibilityButtonATitle = isOpenMenu ? 'Fechar' : 'Abrir'
+
+  return (
+    <button onClick={handleToggleMenu} title={accessibilityButtonATitle}>
+      {isOpenMenu ? (
+        <CloseIcon size={32} data-testid="close-icon" />
+      ) : (
+        <OpenIcon size={32} data-testid="open-icon" />
+      )}
     </button>
-  </>
-)
+  )
+}

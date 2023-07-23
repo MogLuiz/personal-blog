@@ -1,7 +1,7 @@
 import { mainNavConfig } from '@/config'
 
 import { Logo } from '@/components/atoms/Logo'
-import { MainNav } from '@/components/atoms/MainNav'
+import { MainNav } from '@/components/molecules/MainNav'
 
 import * as S from './styles'
 

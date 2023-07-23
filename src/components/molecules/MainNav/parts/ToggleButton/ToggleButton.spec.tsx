@@ -18,4 +18,12 @@ describe('Components > Molecules - ToggleButton', () => {
 
     expect(screen.getByTestId('open-icon')).toBeVisible()
   })
+
+  it('should call handleToggleMenu when button is clicked', () => {
+    render(<ToggleButton isOpenMenu handleToggleMenu={handleToggleMenu} />)
+
+    screen.getByRole('button').click()
+
+    expect(handleToggleMenu).toHaveBeenCalledTimes(1)
+  })
 })

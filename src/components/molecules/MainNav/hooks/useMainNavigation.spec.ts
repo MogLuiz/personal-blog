@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react'
+import { renderHook, act } from '@testing-library/react'
 
 import { useMainNavigation } from './useMainNavigation'
 
@@ -9,5 +9,18 @@ describe('useMainNavigation', () => {
 
     expect(isOpenMenu).toBe(false)
     expect(typeof handleToggleMenu).toBe('function')
+  })
+
+  it('should change isOpenMenu when handleToggleMenu is called', () => {
+    const { result } = renderHook(() => useMainNavigation())
+    const { isOpenMenu, handleToggleMenu } = result.current
+
+    expect(isOpenMenu).toBe(false)
+
+    act(() => {
+      handleToggleMenu()
+    })
+
+    expect(result.current.isOpenMenu).toBe(true)
   })
 })

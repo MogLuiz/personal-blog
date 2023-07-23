@@ -10,4 +10,12 @@ describe('Components > Molecules - ToggleButton', () => {
 
     expect(screen.getByTestId('close-icon')).toBeVisible()
   })
+
+  it('should render open icon when isOpenMenu is false', () => {
+    render(
+      <ToggleButton isOpenMenu={false} handleToggleMenu={handleToggleMenu} />
+    )
+
+    expect(screen.getByTestId('open-icon')).toBeVisible()
+  })
 })

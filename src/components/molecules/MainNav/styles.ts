@@ -18,3 +18,13 @@ export const ListItem = tw.li`
   ease-in-out
   hover:text-link
 `
+
+export const Content = tw.div`
+  z-50
+  flex
+  transition-colors
+  duration-300
+  ease-in-out
+  hover:text-link
+  lg:hidden
+`

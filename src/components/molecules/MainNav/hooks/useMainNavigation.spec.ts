@@ -13,14 +13,20 @@ describe('useMainNavigation', () => {
 
   it('should change isOpenMenu when handleToggleMenu is called', () => {
     const { result } = renderHook(() => useMainNavigation())
-    const { isOpenMenu, handleToggleMenu } = result.current
+    const { handleToggleMenu } = result.current
 
-    expect(isOpenMenu).toBe(false)
+    expect(result.current.isOpenMenu).toBe(false)
 
     act(() => {
       handleToggleMenu()
     })
 
     expect(result.current.isOpenMenu).toBe(true)
+
+    act(() => {
+      handleToggleMenu()
+    })
+
+    expect(result.current.isOpenMenu).toBe(false)
   })
 })

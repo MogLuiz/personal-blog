@@ -1,8 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
 
+import { useMainNavigation } from '@/components/molecules/MainNav/hooks'
 import { ToggleButton } from '@/components/molecules/MainNav/parts/ToggleButton'
 
 import { NavItem } from '@/models'
@@ -14,11 +14,7 @@ type MainNavProps = {
 }
 
 export const MainNav = ({ items }: MainNavProps) => {
-  const [isOpenMenu, setIsOpenMenu] = useState(false)
-
-  const handleToggleMenu = () => {
-    setIsOpenMenu((prevState) => !prevState)
-  }
+  const { isOpenMenu, handleToggleMenu } = useMainNavigation()
 
   return (
     <>

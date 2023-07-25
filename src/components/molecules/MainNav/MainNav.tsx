@@ -28,12 +28,26 @@ export const MainNav = ({ items }: MainNavProps) => {
         </S.List>
       </S.Nav>
 
-      <S.MobileContent>
+      <S.ContainerToggleMobile>
         <ToggleButton
           isOpenMenu={isOpenMenu}
           handleToggleMenu={handleToggleMenu}
         />
-      </S.MobileContent>
+      </S.ContainerToggleMobile>
+
+      {isOpenMenu && (
+        <S.ContainerNavMobile>
+          <S.NavMobile>
+            <S.ListMobile>
+              {items.map(({ href, title }) => (
+                <S.ListItemMobile key={title}>
+                  <Link href={href}>{title}</Link>
+                </S.ListItemMobile>
+              ))}
+            </S.ListMobile>
+          </S.NavMobile>
+        </S.ContainerNavMobile>
+      )}
     </>
   )
 }

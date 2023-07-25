@@ -19,7 +19,7 @@ export const ListItem = tw.li`
   hover:text-link
 `
 
-export const Content = tw.div`
+export const MobileContent = tw.div`
   z-50
   flex
   transition-colors

@@ -28,12 +28,12 @@ export const MainNav = ({ items }: MainNavProps) => {
         </S.List>
       </S.Nav>
 
-      <S.Content>
+      <S.MobileContent>
         <ToggleButton
           isOpenMenu={isOpenMenu}
           handleToggleMenu={handleToggleMenu}
         />
-      </S.Content>
+      </S.MobileContent>
     </>
   )
 }

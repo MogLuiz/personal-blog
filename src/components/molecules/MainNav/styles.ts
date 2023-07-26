@@ -8,19 +8,6 @@ hidden
 lg:flex
 `
 
-export const List = tw.ul`
-  flex
-  gap-4
-`
-
-export const ListItem = tw.li`
-  text-md
-  transition-colors
-  duration-300
-  ease-in-out
-  hover:text-link
-`
-
 export const ContainerToggleMobile = tw.div`
   z-50
   flex

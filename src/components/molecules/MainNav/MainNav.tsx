@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 
+import { List, ListItem } from '@/components/atoms/List'
 import { useMainNavigation } from '@/components/molecules/MainNav/hooks'
 import { ToggleButton } from '@/components/molecules/MainNav/parts/ToggleButton'
 
@@ -19,13 +20,13 @@ export const MainNav = ({ items }: MainNavProps) => {
   return (
     <>
       <S.Nav>
-        <S.List>
+        <List>
           {items.map(({ href, title }) => (
-            <S.ListItem key={title}>
+            <ListItem key={title}>
               <Link href={href}>{title}</Link>
-            </S.ListItem>
+            </ListItem>
           ))}
-        </S.List>
+        </List>
       </S.Nav>
 
       <S.ContainerToggleMobile>

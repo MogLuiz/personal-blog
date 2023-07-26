@@ -18,7 +18,7 @@ const factorySetupTest = () => {
   }
 }
 
-describe('Components > Molecules - Header', () => {
+describe('Components > Organisms - Header', () => {
   it('should be able to render the header correctly', () => {
     const { navigationItem1, navigationItem2, navigationItem3 } =
       factorySetupTest()

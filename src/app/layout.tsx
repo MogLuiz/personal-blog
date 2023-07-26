@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 
+import { mainNavConfig } from '@/config'
+
 import { Layout } from '@/components/atoms/Layout'
 import { Footer } from '@/components/organisms/Footer'
 import { Header } from '@/components/organisms/Header'
@@ -22,10 +24,10 @@ export default function RootLayout({
         <Header />
 
         <Layout>
-          <div className="pt-20">{children}</div>
-        </Layout>
+          <div className="mb-6 pt-20">{children}</div>
 
-        <Footer />
+          <Footer items={mainNavConfig.mainNav} />
+        </Layout>
       </body>
     </html>
   )

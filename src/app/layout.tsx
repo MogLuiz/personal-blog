@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 import { Layout } from '@/components/atoms/Layout'
-import { Header } from '@/components/molecules/Header'
+import { Footer } from '@/components/organisms/Footer'
+import { Header } from '@/components/organisms/Header'
 
 import '@/styles/globals.css'
 
@@ -19,9 +20,12 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-primary text-gray-100">
         <Header />
+
         <Layout>
           <div className="pt-20">{children}</div>
         </Layout>
+
+        <Footer />
       </body>
     </html>
   )

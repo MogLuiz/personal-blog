@@ -1,3 +1,4 @@
+import { siteConfig } from '@/config'
 import { socialLinkConfig } from '@/config/socialLinks'
 import { render, screen } from '@testing-library/react'
 
@@ -11,6 +12,10 @@ const factorySetupTest = () => {
   const navigationItem1 = screen.getByText(RegExp(mainNavItemsMock[0].title))
   const navigationItem2 = screen.getByText(RegExp(mainNavItemsMock[1].title))
   const navigationItem3 = screen.getByText(RegExp(mainNavItemsMock[2].title))
+  const title = screen.getByText(siteConfig.title)
+  const logo = screen.getByLabelText(/logo/i)
+  const socialMediaSection = screen.getByText(/redes/i)
+  const sitemapSection = screen.getByText(/sitemap/i)
   const linkedinSocialLink = screen.getByText(
     RegExp(socialLinkConfig.mainNav[0].title)
   )
@@ -28,6 +33,10 @@ const factorySetupTest = () => {
     navigationItem1,
     navigationItem2,
     navigationItem3,
+    title,
+    logo,
+    socialMediaSection,
+    sitemapSection,
     linkedinSocialLink,
     youtubeSocialLink,
     githubSocialLink,
@@ -44,13 +53,20 @@ describe('Components > Organisms - Footer', () => {
       githubSocialLink,
       linkedinSocialLink,
       twitterSocialLink,
-      youtubeSocialLink
+      youtubeSocialLink,
+      sitemapSection,
+      socialMediaSection,
+      title,
+      logo
     } = factorySetupTest()
 
-    expect(screen.getByLabelText(/logo/i)).toBeVisible()
+    expect(logo).toBeVisible()
     expect(navigationItem1).toBeVisible()
     expect(navigationItem2).toBeVisible()
     expect(navigationItem3).toBeVisible()
+    expect(title).toBeVisible()
+    expect(socialMediaSection).toBeVisible()
+    expect(sitemapSection).toBeVisible()
     expect(githubSocialLink).toBeVisible()
     expect(linkedinSocialLink).toBeVisible()
     expect(twitterSocialLink).toBeVisible()

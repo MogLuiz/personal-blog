@@ -56,4 +56,13 @@ describe('Components > Organisms - Footer', () => {
     expect(twitterSocialLink).toBeVisible()
     expect(youtubeSocialLink).toBeVisible()
   })
+
+  it('should be able to render the footer with the correct links', () => {
+    const { navigationItem1, navigationItem2, navigationItem3 } =
+      factorySetupTest()
+
+    expect(navigationItem1).toHaveAttribute('href', mainNavItemsMock[0].href)
+    expect(navigationItem2).toHaveAttribute('href', mainNavItemsMock[1].href)
+    expect(navigationItem3).toHaveAttribute('href', mainNavItemsMock[2].href)
+  })
 })

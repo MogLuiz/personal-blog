@@ -1,4 +1,4 @@
-import { socialLinkConfig } from '@/config/socialLinks'
+import { socialLinkConfig } from '@/config'
 import { render, screen } from '@testing-library/react'
 
 import { SocialMedia } from '.'

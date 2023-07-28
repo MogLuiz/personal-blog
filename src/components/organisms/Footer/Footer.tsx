@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
-import { siteConfig } from '@/config'
-import { socialLinkConfig } from '@/config/socialLinks'
+import { siteConfig, socialLinkConfig } from '@/config'
 
 import { List, ListItem } from '@/components/atoms/List'
 import { Logo } from '@/components/atoms/Logo'

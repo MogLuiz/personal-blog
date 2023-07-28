@@ -1,5 +1,4 @@
-import { siteConfig } from '@/config'
-import { socialLinkConfig } from '@/config/socialLinks'
+import { siteConfig, socialLinkConfig } from '@/config'
 import { render, screen } from '@testing-library/react'
 
 import { mainNavItemsMock } from '@/models/@mocks/mainNav'

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components > Atoms - List should be able to render the list correctly 1`] = `
+<ul
+  class="flex justify-between gap-3"
+>
+  List
+</ul>
+`;

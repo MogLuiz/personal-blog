@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components > Atoms - ListItem should be able to render the ListItem correctly 1`] = `
+<li
+  class="text-md relative px-2 font-light transition-colors duration-200 hover:text-link"
+>
+  item
+</li>
+`;

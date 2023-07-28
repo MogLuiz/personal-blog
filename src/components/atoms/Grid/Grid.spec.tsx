@@ -1,10 +1,12 @@
 import { render, screen } from '@testing-library/react'
 
+import { ExcludeTypeProperty } from '@/utils/types'
+
 import { Grid, GridProps } from './Grid'
 
-type ExcludeProperty<T, K extends keyof T> = Omit<T, K>
-
-const factorySetupTest = (props?: ExcludeProperty<GridProps, 'children'>) => {
+const factorySetupTest = (
+  props?: ExcludeTypeProperty<GridProps, 'children'>
+) => {
   render(<Grid {...props}>Grid</Grid>)
   const gridChildren = screen.getByText(/grid/i)
 

@@ -4,7 +4,7 @@ import { mainNavItemsMock } from '@/models/@mocks/mainNav'
 
 import { MainNav } from '.'
 
-describe('Components > Atoms - MainNav', () => {
+describe('Components > Molecules - MainNav', () => {
   it('should be able to render the main nav correctly', () => {
     render(<MainNav items={mainNavItemsMock} />)
 

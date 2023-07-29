@@ -1,5 +1,7 @@
 import { allPosts } from 'contentlayer/generated'
 
+import { formatDate, slugify } from '@/utils/functions'
+
 import { BlogPost } from '@/models'
 
 type UseListPosts = {
@@ -10,12 +12,12 @@ export const useListPosts = (): UseListPosts => {
   const formattedPosts = allPosts.map((post) => ({
     title: post.title,
     description: post.description,
-    date: post.date,
+    date: formatDate(post.date),
     tags: post.tags,
     image: post.image,
-    slug: post._id,
+    slug: slugify(post.slug),
     body: post.body,
-    readingTime: 20
+    readingTime: Math.ceil(post.readingTime.minutes)
   }))
 
   return {

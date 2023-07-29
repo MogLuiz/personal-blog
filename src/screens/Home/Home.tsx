@@ -1,16 +1,16 @@
-import { Post } from 'contentlayer/generated'
-
 import { siteConfig } from '@/config'
 
 import { Grid } from '@/components/atoms/Grid'
 import { Profile } from '@/components/atoms/Profile'
 import { PostCard } from '@/components/molecules/PostCard'
 
+import { BlogPost } from '@/models'
+
 type HomeProps = {
-  allPosts: Post[]
+  posts: BlogPost[]
 }
 
-export const Home = ({ allPosts }: HomeProps) => (
+export const Home = ({ posts }: HomeProps) => (
   <main className="flex flex-col gap-6">
     <div>
       <Profile title={siteConfig.title} subtitle={siteConfig.subtitle} />
@@ -18,8 +18,8 @@ export const Home = ({ allPosts }: HomeProps) => (
 
     <div>
       <Grid gap={10} sm={1} md={2} lg={3}>
-        {allPosts.map((post) => (
-          <PostCard key={post._id} />
+        {posts.map((post) => (
+          <PostCard key={post.slug} {...post} />
         ))}
       </Grid>
     </div>

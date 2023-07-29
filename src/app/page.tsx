@@ -1,8 +1,8 @@
 import { Home as HomeScreen } from '@/screens/Home'
-import { PostService } from '@/services/PostService'
+import { useListPosts } from '@/services/PostService'
 
 export default function Home() {
-  const { posts } = PostService.list()
+  const { posts } = useListPosts()
 
-  return <HomeScreen allPosts={posts} />
+  return <HomeScreen posts={posts} />
 }

@@ -1,13 +1,18 @@
-import { Post, allPosts } from 'contentlayer/generated'
+import { allPosts } from 'contentlayer/generated'
+
+import { BlogPost } from '@/models'
+
+import { transformPostPayload } from './shared'
 
 type UseShowPostBySlug = {
-  post?: Post
+  post?: BlogPost
 }
 
 export const useShowPostBySlug = (slug: string): UseShowPostBySlug => {
   const post = allPosts.find((post) => post.slug === slug)
+  const formattedPost = post && transformPostPayload(post)
 
   return {
-    post
+    post: formattedPost
   }
 }

@@ -11,7 +11,7 @@ export default function PostDataLayer({ params }: PostDataLayerProps) {
   const { post } = useShowPostBySlug(params.slug)
 
   // TODO : Check if post is undefined
-  if (!post) return null
+  if (!post?.title) return null
 
   return <PostScreen post={post} />
 }

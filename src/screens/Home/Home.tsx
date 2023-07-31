@@ -10,7 +10,7 @@ type HomeProps = {
   posts: BlogPost[]
 }
 
-export const Home = ({ posts }: HomeProps) => (
+export const HomeScreen = ({ posts }: HomeProps) => (
   <main className="flex flex-col gap-6">
     <div>
       <Profile title={siteConfig.title} subtitle={siteConfig.subtitle} />

@@ -1,5 +1,11 @@
-export const Post = () => (
+import { BlogPost } from '@/models'
+
+type PostScreenProps = {
+  post: BlogPost
+}
+
+export const PostScreen = ({ post }: PostScreenProps) => (
   <div>
-    <h1>Post</h1>
+    <h1>{post.title}</h1>
   </div>
 )

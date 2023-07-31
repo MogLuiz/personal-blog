@@ -1,3 +1,6 @@
+import { Post } from '@/screens/Post'
+import { useShowPostBySlug } from '@/services/PostService'
+
 type PostDataLayerProps = {
   params: {
     slug: string
@@ -5,11 +8,10 @@ type PostDataLayerProps = {
 }
 
 export default function PostDataLayer({ params }: PostDataLayerProps) {
-  console.log({ params })
+  const { post } = useShowPostBySlug(params.slug)
+  console.log({ post })
 
-  return (
-    <div>
-      <h1>Post Data Layer</h1>
-    </div>
-  )
+  // TODO : Check if post is undefined
+
+  return <Post />
 }

@@ -14,7 +14,14 @@ export const IconContainer = tw.div`
   pb-4 
 `
 
+export const Image = tw.img`
+  rounded-xl
+  object-cover
+  object-center
+`
+
 export const ImageContainer = tw.div`
+  flex  
   sm:h[30rem]
   relative
   h-96
@@ -24,11 +31,10 @@ export const ImageContainer = tw.div`
 export const Content = tw.div`
   w-full
   max-w-5xl
+  mt-6
 `
 
-export const DateContainer = tw.div`
-  mt-10
-`
+export const DateContainer = tw.div``
 
 export const Date = tw.p`
   mb-2
@@ -43,7 +49,7 @@ export const Title = tw.h1`
 `
 
 export const Description = tw.p`
-  mb-8
+  mb-6
   text-2xl
   text-gray-400
 `

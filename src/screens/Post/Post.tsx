@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import { BackButton } from '@/components/atoms/BackButton'
 import { Mdx } from '@/components/atoms/Mdx'
 
@@ -20,11 +18,9 @@ export const PostScreen = ({
     </S.IconContainer>
 
     <S.ImageContainer>
-      <Image
+      <S.Image
         src={image}
         alt={title}
-        fill
-        priority
         className="rounded-xl object-cover object-center"
       />
     </S.ImageContainer>

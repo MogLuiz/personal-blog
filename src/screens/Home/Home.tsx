@@ -1,6 +1,7 @@
 import { siteConfig } from '@/config'
 
 import { Grid } from '@/components/atoms/Grid'
+import { Pagination } from '@/components/atoms/Pagination'
 import { Profile } from '@/components/atoms/Profile'
 import { PostCard } from '@/components/molecules/PostCard'
 
@@ -22,6 +23,13 @@ export const HomeScreen = ({ posts }: HomeProps) => (
           <PostCard key={post.slug} {...post} />
         ))}
       </Grid>
+
+      <Pagination
+        currentPage={1}
+        totalPages={4}
+        previousPage="/"
+        nextPage="/?page=2"
+      />
     </div>
   </main>
 )

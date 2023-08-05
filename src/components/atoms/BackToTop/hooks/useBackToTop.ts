@@ -1,9 +1,8 @@
 import { useCallback, useState, useEffect, useRef } from 'react'
 
 export const useBackToTop = () => {
-  const [showScrollButton, setShowScrollButton] = useState(false)
-
   const prevScrollY = useRef(0)
+  const [showScrollButton, setShowScrollButton] = useState(false)
 
   const handleScroll = useCallback(() => {
     if (window.scrollY === 0) {

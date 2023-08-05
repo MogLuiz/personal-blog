@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 
 import { mainNavConfig } from '@/config'
 
+import { BackToTop } from '@/components/atoms/BackToTop'
 import { Layout } from '@/components/atoms/Layout'
 import { Footer } from '@/components/organisms/Footer'
 import { Header } from '@/components/organisms/Header'
@@ -25,6 +26,8 @@ export default function RootLayout({
 
         <Layout>
           <div className="mb-6 pt-20">{children}</div>
+
+          <BackToTop />
 
           <Footer items={mainNavConfig.mainNav} />
         </Layout>

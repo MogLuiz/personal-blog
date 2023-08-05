@@ -1,14 +1,19 @@
 'use client'
 
+import { useBackToTop } from './hooks/useBackToTop'
 import * as S from './styles'
 
 export const BackToTop = () => {
+  const { show, handleBackToTop } = useBackToTop()
+
+  if (!show) return null
+
   return (
     <S.Container>
       <S.Button
         title="Voltar ao topo"
         aria-label="Voltar ao topo"
-        onClick={() => window.scrollTo(0, 0)}
+        onClick={handleBackToTop}
       >
         <S.Icon />
       </S.Button>

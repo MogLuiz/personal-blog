@@ -4,9 +4,9 @@ import { useBackToTop } from './hooks/useBackToTop'
 import * as S from './styles'
 
 export const BackToTop = () => {
-  const { show, handleBackToTop } = useBackToTop()
+  const { showScrollButton, handleBackToTop } = useBackToTop()
 
-  if (!show) return null
+  if (!showScrollButton) return null
 
   return (
     <S.Container>

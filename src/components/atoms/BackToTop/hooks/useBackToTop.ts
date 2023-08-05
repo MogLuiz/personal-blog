@@ -1,37 +1,39 @@
-import { useCallback, useState, useEffect } from 'react'
+import { useCallback, useState, useEffect, useRef } from 'react'
 
 export const useBackToTop = () => {
-  const [show, setShow] = useState(false)
-  const [lastScrollY, setLastScrollY] = useState(0)
+  const [showScrollButton, setShowScrollButton] = useState(false)
+
+  const prevScrollY = useRef(0)
 
   const handleScroll = useCallback(() => {
     if (window.scrollY === 0) {
-      setShow(false)
+      setShowScrollButton(false)
+      prevScrollY.current = 0
       return
     }
 
-    if (window.scrollY > lastScrollY) {
-      setShow(false)
+    if (window.scrollY > prevScrollY.current) {
+      setShowScrollButton(false)
     } else {
-      setShow(true)
+      setShowScrollButton(true)
     }
 
-    setLastScrollY(window.scrollY)
-  }, [lastScrollY])
+    prevScrollY.current = window.scrollY
+  }, [])
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
 
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [handleScroll, lastScrollY])
+  }, [handleScroll, prevScrollY])
 
   const handleBackToTop = useCallback(() => {
     window.scrollTo(0, 0)
-    setLastScrollY(0)
+    prevScrollY.current = 0
   }, [])
 
   return {
-    show,
+    showScrollButton,
     handleBackToTop
   }
 }

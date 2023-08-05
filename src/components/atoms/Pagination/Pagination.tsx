@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import * as S from './styles'
 
 type PaginationProps = {
   currentPage: number
@@ -13,17 +13,19 @@ export const Pagination = ({
   previousPage,
   totalPages
 }: PaginationProps) => (
-  <div>
-    <div>
-      <Link href="#">Página anterior</Link>
-    </div>
+  <S.Container>
+    <S.Link href={previousPage}>
+      <S.PrevPageIcon />
+      Página anterior
+    </S.Link>
 
-    <p>
+    <S.PageDisplay>
       {currentPage} de {totalPages}
-    </p>
+    </S.PageDisplay>
 
-    <div>
-      <Link href="#">Próxima página</Link>
-    </div>
-  </div>
+    <S.Link href={nextPage}>
+      Próxima página
+      <S.NextPageIcon />
+    </S.Link>
+  </S.Container>
 )

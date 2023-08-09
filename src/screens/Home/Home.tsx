@@ -25,7 +25,7 @@ export const HomeScreen = ({ posts }: HomeProps) => (
       </Grid>
 
       <Pagination
-        currentPage={1}
+        currentPage={2}
         totalPages={4}
         previousPage="/"
         nextPage="/?page=2"

@@ -12,20 +12,29 @@ export const Pagination = ({
   nextPage,
   previousPage,
   totalPages
-}: PaginationProps) => (
-  <S.Container>
-    <S.Link href={previousPage}>
-      <S.PrevPageIcon />
-      Página anterior
-    </S.Link>
+}: PaginationProps) => {
+  const isFirstPage = currentPage === 1
+  const isLastPage = currentPage === totalPages
 
-    <S.PageDisplay>
-      {currentPage} de {totalPages}
-    </S.PageDisplay>
+  return (
+    <S.Container>
+      {!isFirstPage && (
+        <S.Link href={previousPage}>
+          <S.PrevPageIcon />
+          Página anterior
+        </S.Link>
+      )}
 
-    <S.Link href={nextPage}>
-      Próxima página
-      <S.NextPageIcon />
-    </S.Link>
-  </S.Container>
-)
+      <S.PageDisplay>
+        {currentPage} de {totalPages}
+      </S.PageDisplay>
+
+      {!isLastPage && (
+        <S.Link href={nextPage}>
+          Próxima página
+          <S.NextPageIcon />
+        </S.Link>
+      )}
+    </S.Container>
+  )
+}

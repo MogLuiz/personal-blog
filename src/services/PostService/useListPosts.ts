@@ -1,18 +1,38 @@
 import { Post, allPosts } from 'contentlayer/generated'
 
+import { dataPagination } from '@/utils/functions/pagination'
+
 import { BlogPost } from '@/models'
 
 import { transformPostPayload } from './shared'
 
-type UseListPosts = {
-  posts: BlogPost[]
+type UseListPostsParams = {
+  limit?: number
+  currentPage?: number
 }
 
-export const useListPosts = (): UseListPosts => {
+type UseListPosts = {
+  posts: BlogPost[]
+  totalPages: number
+  currentPage: number
+}
+
+export const useListPosts = ({
+  currentPage = 1,
+  limit = 10
+}: UseListPostsParams): UseListPosts => {
   const formattedPosts = allPosts.sort(orderByDate).map(transformPostPayload)
 
+  const { paginatedData, totalPages } = dataPagination(
+    formattedPosts,
+    currentPage,
+    limit
+  )
+
   return {
-    posts: formattedPosts
+    posts: paginatedData,
+    totalPages,
+    currentPage
   }
 }
 

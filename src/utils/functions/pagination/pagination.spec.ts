@@ -33,4 +33,11 @@ describe('dataPagination - utility function', () => {
     expect(paginatedData3).toEqual([{ id: 5, name: 'Jill' }])
     expect(totalPages3).toBe(3)
   })
+
+  it('should return paginated data with default values', () => {
+    const { paginatedData, totalPages } = dataPagination(data)
+
+    expect(paginatedData).toEqual(data)
+    expect(totalPages).toBe(1)
+  })
 })

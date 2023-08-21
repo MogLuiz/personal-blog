@@ -20,8 +20,8 @@ export const PostCard = ({
   tags,
   isMain = false
 }: PostCardProps) => (
-  <S.LinkContainer href={slug} isMain={isMain}>
-    <S.ImageContainer>
+  <S.LinkContainer href={slug} $isMain={isMain}>
+    <S.ImageContainer className={`${isMain && 'lg:mr-3'}`}>
       <Image
         src={image}
         fill
@@ -31,7 +31,7 @@ export const PostCard = ({
       />
     </S.ImageContainer>
 
-    <S.Content>
+    <S.Content className={`${isMain && 'lg:pt-0'}`}>
       <S.TagsContainer>
         {tags?.map((tag) => <Tag key={tag}>{tag}</Tag>)}
       </S.TagsContainer>

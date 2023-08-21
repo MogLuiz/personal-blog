@@ -26,6 +26,8 @@ export const HomeScreen = ({
   previousPage,
   withProfileSection = true
 }: HomeProps) => {
+  const firstPost = posts[0]
+
   return (
     <S.Container>
       {withProfileSection && (
@@ -36,9 +38,11 @@ export const HomeScreen = ({
 
       <S.ContentContainer>
         <S.PostListContainer>
+          {firstPost && <PostCard {...firstPost} isMain />}
+
           <Grid gap={10} sm={1} md={2} lg={3}>
-            {posts.map((post, index) => (
-              <PostCard key={post.slug} {...post} isMain={index === 0} />
+            {posts.slice(1).map((post) => (
+              <PostCard key={post.slug} {...post} />
             ))}
           </Grid>
         </S.PostListContainer>

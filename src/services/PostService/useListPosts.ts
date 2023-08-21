@@ -21,7 +21,7 @@ type UseListPosts = {
 
 export const useListPosts = ({
   currentPage = 1,
-  limit = 10
+  limit = 1
 }: UseListPostsParams = {}): UseListPosts => {
   const formattedPosts = allPosts.sort(orderByDate).map(transformPostPayload)
 

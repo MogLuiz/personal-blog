@@ -12,7 +12,15 @@ export default function PaginatedHomeDataLayer({
 }: PaginatedHomeDataLayerProps) {
   const currentPage = Number(params.page)
 
-  const data = useListPosts({ currentPage, limit: 1 })
+  const data = useListPosts({ currentPage })
+
+  if (!data.posts.length) {
+    return (
+      <div>
+        <h2>Não há posts</h2>
+      </div>
+    )
+  }
 
   return <HomeScreen {...data} withProfileSection={false} />
 }

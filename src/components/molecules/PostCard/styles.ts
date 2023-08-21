@@ -2,7 +2,11 @@ import Link from 'next/link'
 
 import tw from 'tailwind-styled-components'
 
-export const LinkContainer = tw(Link)`
+import { PostCardProps } from './PostCard'
+
+type LinkContainerProps = Pick<PostCardProps, 'isMain'>
+
+export const LinkContainer = tw(Link)<LinkContainerProps>`
   hover:border-link
   w-full
   rounded-lg
@@ -13,6 +17,10 @@ export const LinkContainer = tw(Link)`
   p-3
   flex
   flex-col
+
+  ${({ isMain }) => `
+    ${isMain && `lg:flex-row mb-3`}
+  `}
 `
 
 export const ImageContainer = tw.div` 

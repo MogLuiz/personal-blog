@@ -6,6 +6,10 @@ import { BlogPost } from '@/models'
 
 import * as S from './styles'
 
+export type PostCardProps = BlogPost & {
+  isMain?: boolean
+}
+
 export const PostCard = ({
   readingTime,
   slug,
@@ -13,9 +17,10 @@ export const PostCard = ({
   description,
   image,
   title,
-  tags
-}: BlogPost) => (
-  <S.LinkContainer href={slug}>
+  tags,
+  isMain = false
+}: PostCardProps) => (
+  <S.LinkContainer href={slug} isMain={isMain}>
     <S.ImageContainer>
       <Image
         src={image}

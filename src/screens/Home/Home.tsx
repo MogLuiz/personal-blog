@@ -7,6 +7,8 @@ import { PostCard } from '@/components/molecules/PostCard'
 
 import { BlogPost } from '@/models'
 
+import * as S from './styles'
+
 type HomeProps = {
   posts: BlogPost[]
   currentPage: number
@@ -25,19 +27,21 @@ export const HomeScreen = ({
   withProfileSection = true
 }: HomeProps) => {
   return (
-    <main className="flex flex-col gap-6">
+    <S.Container>
       {withProfileSection && (
-        <div>
+        <S.HeaderContainer>
           <Profile title={siteConfig.title} subtitle={siteConfig.subtitle} />
-        </div>
+        </S.HeaderContainer>
       )}
 
-      <div>
-        <Grid gap={10} sm={1} md={2} lg={3}>
-          {posts.map((post) => (
-            <PostCard key={post.slug} {...post} />
-          ))}
-        </Grid>
+      <S.ContentContainer>
+        <S.PostListContainer>
+          <Grid gap={10} sm={1} md={2} lg={3}>
+            {posts.map((post, index) => (
+              <PostCard key={post.slug} {...post} isMain={index === 0} />
+            ))}
+          </Grid>
+        </S.PostListContainer>
 
         <Pagination
           currentPage={currentPage}
@@ -45,7 +49,7 @@ export const HomeScreen = ({
           previousPage={previousPage}
           nextPage={nextPage}
         />
-      </div>
-    </main>
+      </S.ContentContainer>
+    </S.Container>
   )
 }

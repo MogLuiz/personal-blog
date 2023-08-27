@@ -1,3 +1,5 @@
+import { Link } from '@/components/atoms/Link'
+
 import * as S from './styles'
 
 export const AboutUILayer = () => {
@@ -17,6 +19,7 @@ export const AboutUILayer = () => {
         Sou apaixonado por tecnologia e em como ela transforma a vida das
         pessoas. Adoro desafios que me tiram da zona de conforto e estou sempre
         em busca de evoluir tecnicamente.
+        <Link href="#">Aqui</Link>
       </S.Paragraph>
 
       <S.Paragraph>

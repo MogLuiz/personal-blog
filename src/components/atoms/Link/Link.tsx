@@ -7,7 +7,7 @@ type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
 }
 
 export const Link = ({ children, ...rest }: LinkProps) => (
-  <S.Container {...rest}>
+  <S.Container {...rest} target="_blank" rel="noopener noreferrer">
     <S.Content>{children}</S.Content>
   </S.Container>
 )

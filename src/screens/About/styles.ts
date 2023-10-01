@@ -1,5 +1,7 @@
 import tw from 'tailwind-styled-components'
 
+export const Wrapper = tw.main``
+
 export const Title = tw.h1`
   mb-6
   text-3xl

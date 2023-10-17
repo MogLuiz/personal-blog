@@ -8,7 +8,7 @@ type UseShowPostBySlug = {
   post?: BlogPost
 }
 
-export const useShowPostBySlug = (slug: string): UseShowPostBySlug => {
+export const getPostBySlug = (slug: string): UseShowPostBySlug => {
   const post = allPosts.find((post) => post.slug === slug)
   const formattedPost = post && transformPostPayload(post)
 
@@ -16,3 +16,5 @@ export const useShowPostBySlug = (slug: string): UseShowPostBySlug => {
     post: formattedPost
   }
 }
+
+

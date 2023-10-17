@@ -1,3 +1,5 @@
+import { notFound } from 'next/navigation'
+
 import { PostScreen } from '@/screens/Post'
 import { useShowPostBySlug } from '@/services/PostService'
 
@@ -10,8 +12,7 @@ type PostDataLayerProps = {
 export default function PostDataLayer({ params }: PostDataLayerProps) {
   const { post } = useShowPostBySlug(params.slug)
 
-  // TODO : Check if post is undefined
-  if (!post) return null
+  if (!post) notFound()
 
   return <PostScreen post={post} />
 }

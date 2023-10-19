@@ -1,6 +1,23 @@
+'use client'
+import NextImage from 'next/image';
+
 import tw from 'tailwind-styled-components'
 
-export const Wrapper = tw.main``
+// export const Wrapper = tw.main``
+
+export const ImageContainer = tw.div`
+  relative
+  h-96
+  w-full
+`;
+
+export const Image = tw(NextImage)`
+  h-full
+  w-full
+  object-cover
+  object-center
+  rounded-xl
+`;
 
 export const Title = tw.h1`
   mb-6
@@ -22,3 +39,4 @@ export const Paragraph = tw.p`
   font-normal
   leading-relaxed
 `
+

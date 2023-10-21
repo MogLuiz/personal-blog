@@ -1,15 +1,12 @@
 'use client'
 import NextImage from 'next/image';
+import { CSSProperties } from 'react';
 
 import tw from 'tailwind-styled-components'
 
-// export const Wrapper = tw.main``
+export const Wrapper = tw.main``
 
-export const ImageContainer = tw.div`
-  relative
-  h-96
-  w-full
-`;
+export const ImageContainer: CSSProperties = { height: '24rem', width: '100%', position: 'relative', marginBottom: '1rem' }
 
 export const Image = tw(NextImage)`
   h-full

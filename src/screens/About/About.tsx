@@ -3,10 +3,10 @@ import { Link } from '@/components/atoms/Link'
 import * as S from './styles'
 
 export const AboutUILayer = () => (
-  <main>
+  <S.Wrapper>
     <S.Title>Sobre mim</S.Title>
 
-    <div style={{ height: '24rem', width: '100%', position: 'relative' }}>
+    <div style={S.ImageContainer}>
       <S.Image
         src="/assets/images/image-post.jpeg"
         alt="Foto de exemplo"
@@ -40,5 +40,5 @@ export const AboutUILayer = () => (
       Adoro desafios que me tiram da zona de conforto e estou sempre em busca de
       evoluir tecnicamente.
     </S.Paragraph>
-  </main>
+  </S.Wrapper>
 )

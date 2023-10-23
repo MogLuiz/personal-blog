@@ -42,6 +42,8 @@ export const useListPosts = ({
   }
 }
 
+
+
 const orderByDate = (a: Post, b: Post): number => (a.date < b.date ? 1 : -1)
 
 const paginationPages = (currentPage = 1, pageRoute = '/page') => {
@@ -50,6 +52,29 @@ const paginationPages = (currentPage = 1, pageRoute = '/page') => {
   const nextPage = `${pageRoute}/${currentPage + 1}`
 
   return {
+    previousPage,
+    nextPage
+  }
+}
+
+export const getAllPosts = ({
+  currentPage = 1,
+  limit = 10
+}: UseListPostsParams = {}): UseListPosts => {
+  const formattedPosts = allPosts.sort(orderByDate).map(transformPostPayload)
+
+  const { paginatedData, totalPages } = dataPagination(
+    formattedPosts,
+    currentPage,
+    limit
+  )
+
+  const { nextPage, previousPage } = paginationPages(currentPage)
+
+  return {
+    posts: paginatedData,
+    totalPages,
+    currentPage,
     previousPage,
     nextPage
   }
